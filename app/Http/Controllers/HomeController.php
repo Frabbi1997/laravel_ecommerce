@@ -6,18 +6,19 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function Home()
+    public function ShowHome()
     {
-      return  view('home');
+      return  view('frontent.home');
     }
 
-    public function About()
+    public function CategoryByProduct($slug)
     {
-        return view('about');
+        $data = [];
+        $data['slug'] = $slug;
+
+       return view('frontent.category', $data);
     }
 
-    public function Rabbi()
-    {
-        return view ('rabbi');
-    }
+
+
 }

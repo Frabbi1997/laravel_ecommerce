@@ -11,13 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/home', 'HomeController@Home')->name('home');
 
 
-Route::get('/about', 'HomeController@About')->name('about');
+Route::get('/', 'HomeController@ShowHome');
 
-Route::get('/rabbi', 'HomeController@Rabbi')->name('rabbi');
+Route::get('/category/{slug}', 'HomeController@CategoryByProduct');
+

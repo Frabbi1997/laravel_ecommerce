@@ -14,5 +14,5 @@ class ProductsTableSeeder extends Seeder
     {
 
     }
-    01976174906
+
 }
