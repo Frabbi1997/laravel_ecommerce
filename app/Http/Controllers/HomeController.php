@@ -8,7 +8,7 @@ class HomeController extends Controller
 {
     public function ShowHome()
     {
-      return  view('frontent.home');
+      return  view('frontend.home');
     }
 
     public function CategoryByProduct($slug)
@@ -16,7 +16,12 @@ class HomeController extends Controller
         $data = [];
         $data['slug'] = $slug;
 
-       return view('frontent.category', $data);
+       return view('frontend.category', $data);
+    }
+
+    public function ShowDashboard()
+    {
+        return view('frontend.dashboard');
     }
 
 

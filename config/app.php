@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'PPI Ecommerce'),
+    'name' => env('APP_NAME', 'PPI_Ecommerce'),
 
     /*
     |--------------------------------------------------------------------------

@@ -8,14 +8,14 @@
     <!-- Bootstrap core CSS -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
-    @include('frontent.partials._navber')
+    @include('frontend.partials._navber')
 
 </head>
 <body>
 
 @yield('main')
 
-@include('frontent.partials._footer')
+@include('frontend.partials._footer')
 
 <script src="{{ mix('js/app.js') }}"></script>
 

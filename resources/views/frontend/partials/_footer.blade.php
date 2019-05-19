@@ -3,6 +3,6 @@
         <p class="float-right">
             <a href="#">Back to top</a>
         </p>
-        <p> Copyrigth &copy; {{'PPI Ecommerce'}} {{date('Y')}}</p>
+        <p> Copyrigth &copy; {{config('app.name')}} {{date('Y')}}</p>
     </div>
 </footer>

@@ -1,12 +1,12 @@
 
-  @extends('layouts.frontent')
+@extends('layouts.frontend')
 
 
   @section('main')
 
       <main role="main">
 
-          @include('frontent.partials._jumbotron')
+       <h3 class="text-center">{{$slug}}</h3>
 
           <div class="album py-5 bg-light">
               <div class="container">
@@ -209,4 +209,5 @@
 
       </main>
 
-  @stop
+      @stop
+
