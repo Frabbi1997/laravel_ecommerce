@@ -57,16 +57,21 @@ class AuthController extends Controller
         if (auth()->attempt($credentials))
         {
 
-          return redirect()->route('dashboard');
+          return redirect()->route('profile');
         }
 
         $this->setErrorMessage('Invaild Credentials.');
         return redirect()->back();
     }
 
+    public function ShowProfile()
+    {
+        return  view('backend.profile');
+    }
+
     public function Logout()
     {
-        $this->setSuccessMessage('User logged out.');
+        $this->setSuccessMessage('User have logged out.');
        auth()->logout();
        return redirect()->route('login');
     }

@@ -26,4 +26,6 @@ Route::post('/login', 'AuthController@processLogin');
 Route::get('/profile', 'AuthController@ShowProfile')->name('profile');
 Route::get('/logout', 'AuthController@Logout')->name('logout');
 
-Route::get('/dashboard', 'HomeController@ShowDashboard')->name('dashboard');
+Route::get('/dashboard', 'DashboaradController@ShowDashboard')->name('dashboard');
+
+Route::get('/orders', 'OrdersController@index')->name('orders.index');

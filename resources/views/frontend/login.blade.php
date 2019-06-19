@@ -23,17 +23,15 @@
                             {{session('message')}}
                         </div>
                     @endif
+
                     <form action="#" method="post" class="form
                          form-horizontal" >
                         @csrf
-
-
                         <div class="form-group">
                             <label for="email">Email Address</label>
                             <input type="email" name="email" id="email"
                                    class="form-control" placeholder="Enter email">
                         </div>
-
 
 
                         <div class="form-group">
