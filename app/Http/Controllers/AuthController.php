@@ -66,7 +66,9 @@ class AuthController extends Controller
 
     public function ShowProfile()
     {
-        return  view('backend.profile');
+        $data['user'] = auth()->user();
+
+        return  view('backend.profile', $data);
     }
 
     public function Logout()
