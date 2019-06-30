@@ -24,6 +24,11 @@ Route::get('/login', 'AuthController@ShowLogin')->name('login');
 Route::post('/login', 'AuthController@processLogin');
 
 Route::get('/profile', 'AuthController@ShowProfile')->name('profile');
+Route::post('/profile', 'AuthController@UpdateProfile');
+
+Route::post('/password', 'AuthController@updatePassword')->name('password.update');
+
+
 Route::get('/logout', 'AuthController@Logout')->name('logout');
 
 Route::get('/dashboard', 'DashboaradController@ShowDashboard')->name('dashboard');

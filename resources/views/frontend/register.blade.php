@@ -8,22 +8,7 @@
                   <div class="well">
                       <h3 class="text-center mt-4">Register your account</h3>
 
-                      @if ($errors->any())
-                          <div class="alert alert-danger">
-                              <ul>
-                                  @foreach ($errors->all() as $error)
-                                      <li>{{ $error }}</li>
-                                  @endforeach
-                              </ul>
-                          </div>
-                      @endif
-
-                      @if(session()->has('message'))
-                         <div class="alert alert-{{session('type')}}">
-                             {{session('message')}}
-                         </div>
-
-                       @endif
+                         @include('error_message._message')
 
                       <form action="{{route('register')}}" method="post" class="form
                          form-horizontal" >

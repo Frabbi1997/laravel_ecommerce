@@ -57,7 +57,7 @@ class AuthController extends Controller
         if (auth()->attempt($credentials))
         {
 
-          return redirect()->route('profile');
+          return redirect()->route('/');
         }
 
         $this->setErrorMessage('Invaild Credentials.');
@@ -70,6 +70,62 @@ class AuthController extends Controller
 
         return  view('backend.profile', $data);
     }
+
+    public function UpdateProfile(Request $request)
+    {
+        //Velidation
+
+        $user = optional(auth()->user());
+
+        $this->validate($request, [
+            'full_name'   => 'required',
+            'email'       => 'required|email|unique:users,email,'.$user->id,
+            'phone_number'=> 'required|min:6|max:15|unique:users,phone_number,'.$user->id,
+            'address'    => 'required',
+        ]);
+
+        $input = $request->except(['_token']);
+        $user->update($input);
+        $this->setSuccessMessage('Profile Updated.');
+
+        return redirect()->back();
+    }
+
+    public function updatePassword(Request $request)
+    {
+        //Velidation
+
+        $user = optional(auth()->user());
+
+        $this->validate($request, [
+            'old_password'   => 'required',
+            'password'       => 'required|min:6|confirmed',
+
+        ]);
+
+        $credentials = [
+            'email'  => $user->email,
+            'password' => $request->input('old_password'),
+        ];
+
+        if(auth()->attempt($credentials))
+        {
+            $user->update([
+                'password' => bcrypt($request->input('password')),
+
+            ]);
+
+            $this->setSuccessMessage('Password Changed.');
+
+            return redirect()->back();
+        }
+
+        $this->setErrorMessage('old password dose not match.');
+
+        return redirect()->back();
+    }
+
+
 
     public function Logout()
     {

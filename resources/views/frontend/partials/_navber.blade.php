@@ -14,7 +14,7 @@
                         <ul class="list-unstyled">
                             <li>
                                 <a href="{{route('profile')}}"   class="text-white">
-                                   profile:  {{ auth()->user()->email }}
+                                   profile:  {{ auth()->user()->full_name }}
                                 </a>
                             </li>
                             <li>
