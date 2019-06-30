@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\str;
 use App\Models\Category;
 
 class CategoriesTableSeeder extends Seeder
@@ -10,13 +11,19 @@ class CategoriesTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(): void
     {
 
-        Category::create([
-            'name' => 'Laptop',
-            'slug' => 'laptop'
-        ]);
+        $categoris = [
+            'mobail', 'bick', 'flate', 'shoping',
+        ];
+
+        foreach($categoris as $category){
+            Category::create([
+                'name' => $category,
+                'slug' => Str::slug($category),
+            ]);
+        }
 
     }
 }

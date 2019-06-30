@@ -14,9 +14,9 @@ class UsersTableSeeder extends Seeder
     {
         User::create([
             'full_name' => 'Fajle Rabbi',
-            'email'     =>  'fajle7149@gmail.com',
+            'email'     =>  'robin@gmail.com',
             'password'  => bcrypt('12345'),
-            'mobile_number'=> '01880508027',
+            'phone_number'=> '01775236985',
             'address'    => 'Bogura',
             'role'      => 'admin',
             'email_verified_at' => now()

@@ -3,12 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Product;
 
 class HomeController extends Controller
 {
     public function ShowHome()
     {
-      return  view('frontend.home');
+        $data['products'] = Product::select(['id', 'slug', 'name', 'price' ])->
+        paginate(6);
+
+      return  view('frontend.home', $data);
     }
 
     public function CategoryByProduct($slug)
